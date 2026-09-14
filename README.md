@@ -4,31 +4,60 @@
 include iostream
 include random numbers
 
-include namespace std
-
 array MAX is max length of array
 
 main integer function
   
-  declare random(0-1) for random class
-  declare array horses Lenard, Klein, Alger, Audrey, Derrick, Emyln
-  declaer array raceTrack with 5 rows and 15 columns
-  {
-    {15 dahes}
-    {15 dahes}
-    {15 dahes}
-    {15 dahes}
-    {15 dahes}
-  }
-
-  prompt user to start the horse race
+  declare array horses (0, 1, 2, 3, 4) 
+  // names: (Lenard, Klein, Alger, Audrey, Derrick, Emyln)
+  declare boolean keepGoing true
   
-  for integer i = 0; array horses + 1; i + 1;
-    for integer j = 0; horses[i];
-      random(j)
-      for integer q; integer  x and  y = 0; array raceTrack; q = j;
-        if q = 1;
-          horses[i] on raceTrack [x] [y] increases by 1;
-        
+  while keepGoing is true
+    prompt the user to press enter to flip the coin
+    
+    call function 'advance' (value at 'horses', pointer 'horses') 
+    call function 'printLane' (value at 'horses', pointer 'horses')
+    
+    if value of 'printLane' == 'MAX' array length
+      call function 'isWinner' ( value of 'horses', pointer 'horses')
+    else 
+      print "NO WINNER"  
+---
 
+Advance function
+---
+void advance(integer 'horseNum', pointer integer 'horses')
+  declare variable 'coin' as random number 0 - 1
+  declare integer 'horseTempNum'
+
+  if coin = 1
+    pointer 'horses += 1
+    'horseTempNum' = value at 'horses'
+    print 'horseNum' and 'horseTempNum'
+  else
+    print 'horseNum' and 'horses'
+  
+        
+---
+
+printlane function
+---
+void printLane(integer 'horseNum', pointer integer 'horses')
+  declare array 'lane' with 1 row and 15 columns
+  
+  print array lane ['horseNum'] and ['horses']
+---
+
+isWinner function
+---
+bool isWinner(integer 'horseNum', pointer integer 'horses')
+  declare array 'lane' with 1 row and 15 columns
+
+  if valueof('horses') is eaual to max length of 'lane'
+    print 'horseNum' is the winner!!
+    return true;
+  
+  else
+    return false or 0?
+    
 ---
