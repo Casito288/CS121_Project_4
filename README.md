@@ -4,19 +4,22 @@
 include iostream
 include random numbers
 
-array MAX is max length of array
+//                      (which horse it is, the horses array)
+call function 'advance' ('horses', pointer 'horses')
+call function 'printLane' ('horses', pointer 'horses')
+call function 'isWinner' ('horses', pointer 'horses')
+
+MAX is max length of array
 
 main integer function
-  
-  declare array horses (0, 1, 2, 3, 4) 
+ // : 
+  declare array 'horses' of integers 0 - 4; 
   // names: (Lenard, Klein, Alger, Audrey, Derrick, Emyln)
   declare boolean keepGoing true
   
   while keepGoing is true
     prompt the user to press enter to flip the coin
     
-    call function 'advance' (value at 'horses', pointer 'horses') 
-    call function 'printLane' (value at 'horses', pointer 'horses')
     
     if value of 'printLane' == 'MAX' array length
       call function 'isWinner' ( value of 'horses', pointer 'horses')
@@ -36,8 +39,6 @@ void advance(integer 'horseNum', pointer integer 'horses')
     print 'horseNum' and 'horseTempNum'
   else
     print 'horseNum' and 'horses'
-  
-        
 ---
 
 printlane function
