@@ -13,9 +13,9 @@
 
   main function
  
-    //Indicies for each horse
-    declare array 'horseNum' of integers 0 - 4; // names: (Lenard, Klein, Alger, Audrey, Derrick, Emyln)
-    declare int* 'horses' = &'horseNum';
+    //Indicies for each horse  \
+    declare array 'horseNum' of integers 0 - 4; // names: (Lenard, Klein, Alger, Audrey, Derrick, Emyln)  \
+    declare int* 'horses' = &'horseNum';  \
     declare boolean keepGoing true;
   
     while keepGoing is true
@@ -45,7 +45,7 @@ Advance function
 printlane function
 ---
   function printLane('horseNum', * 'horses')  \
-    declare array 'lane' [5][15] of "-"
+    declare array 'lane' [5][15] of "-"  \
     declare int* 'horseTemp' = &'horses';
     
     print array 'lane' ['horseNum'] and ['horseTemp'];
