@@ -21,8 +21,14 @@
     while keepGoing is true {
       prompt the user to press enter to flip the coin;
     
-      advance(int 'horseNum', int* 'horses');
-      printLine(int 'horseNum',int* 'horses');
+      call advance function and pass array horseNum and pointer horses
+      call printLine function and pass array horsNum and pointer horses
+      call isWinner function and pass array horseNum and pointer horses
+      
+      if that horse won
+        set keepgoing as false;
+
+      ask user for input to start next turn
    }     
 ---
 
@@ -31,14 +37,7 @@ Advance function
   function advance(int 'horseNum', int* 'horses')  \
     declare variable 'coin' as random number 0 - 1;  
 
-    if coin = 1 {
-      pointer 'horses' += 1;
-      print 'horseNum', 'horses';
-    } if else  &'horses' == MAX{
-      isWinner(int 'horseNum', int* 'horses');
-    } else {
-      print 'horseNum', 'horses';
-    } // end if statement
+    if coing is 1 add 1 to 'horses' array at index 'horseNum'
 ---
 
 printlane function
@@ -57,8 +56,6 @@ isWinner function
 
     if &'horses' is eaual to MAX {
       print 'horseNum' is the winner!!;
-    } else {
-      retunr boolean false (keepGoing);
-    } // end if
+    }
 ---
 
