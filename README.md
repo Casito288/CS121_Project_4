@@ -13,16 +13,16 @@
 
   main function
  
-    //Indicies for each horse  \
-    declare array 'horseNum' of integers 0 - 4; // names: (Lenard, Klein, Alger, Audrey, Derrick, Emyln)  \
-    declare int* 'horses' = &'horseNum';  \
+    //Indicies for each horse  
+    declare array 'horseNum' of integers 0 - 4; // names: (Lenard, Klein, Alger, Audrey, Derrick, Emyln)  
+    declare int* 'horses' = &'horseNum';  
     declare boolean keepGoing true;
   
     while keepGoing is true
       prompt the user to press enter to flip the coin;
     
-      advance('horseNum', *'horses');
-      
+      advance(int 'horseNum', int* 'horses');
+      printLine(int 'horseNum',int* 'horses');
       
       if value of 'printLane' == 'MAX' array length
         call function 'isWinner' ('horses', * 'horses');
@@ -32,19 +32,21 @@
 
 Advance function
 ---
-  function advance('horseNum', int* 'horses')  \
-    declare variable 'coin' as random number 0 - 1;  \  
+  function advance(int 'horseNum', int* 'horses')  \
+    declare variable 'coin' as random number 0 - 1;  
 
     if coin = 1
       pointer 'horses' += 1;
       print 'horseNum', 'horses';
+      if &'horses' == MAX
+        isWinner(int 'horseNum', int* 'horses');
     else
       print 'horseNum', 'horses';
 ---
 
 printlane function
 ---
-  function printLane('horseNum', * 'horses')  \
+  function printLane(int 'horseNum', int* 'horses')  \
     declare array 'lane' [5][15] of "-"  \
     declare int* 'horseTemp' = &'horses';
     
@@ -53,10 +55,10 @@ printlane function
 
 isWinner function
 ---
-  function isWinner('horseNum', * 'horses')  \  
+  function isWinner(int 'horseNum', int* 'horses')  
     declare int* 'horseTemp' = &'horses';
 
-    if valueof('horseTemp') is eaual to max length of 'lane'
+    if &'horses' is eaual to MAX;
       print 'horseNum' is the winner!!;
     else
       print 'horseNum' and 'horses';
