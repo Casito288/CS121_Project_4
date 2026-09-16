@@ -1,5 +1,5 @@
 # CS121_Project_4
-"
+**
 ---
 include iostream
 include random numbers
@@ -62,4 +62,4 @@ bool isWinner(integer 'horseNum', pointer integer 'horses')
     return false or 0?
     
 ---
-"
+**
