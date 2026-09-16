@@ -5,9 +5,9 @@
   include random numbers
 
   //                      (which horse it is, the horses array)  \
-  call function 'advance' (int 'horseNum', int* 'horses');  \
-  call function 'printLane' (int 'horseNum', int* 'horses');  \
-  call function 'isWinner' (int 'horseNum', int* 'horses');  
+  declare function 'advance' (int 'horseNum', int* 'horses');  \
+  declare function 'printLane' (int 'horseNum', int* 'horses');  \
+  declare function 'isWinner' (int 'horseNum', int* 'horses');  
 
   MAX is max length of array;
 
