@@ -18,16 +18,12 @@
     declare int* 'horses' = &'horseNum';  
     declare boolean keepGoing true;
   
-    while keepGoing is true
+    while keepGoing is true {
       prompt the user to press enter to flip the coin;
     
       advance(int 'horseNum', int* 'horses');
       printLine(int 'horseNum',int* 'horses');
-      
-      if value of 'printLane' == 'MAX' array length
-        call function 'isWinner' ('horses', * 'horses');
-      else 
-        print "NO WINNER";  
+   }     
 ---
 
 Advance function
@@ -35,13 +31,14 @@ Advance function
   function advance(int 'horseNum', int* 'horses')  \
     declare variable 'coin' as random number 0 - 1;  
 
-    if coin = 1
+    if coin = 1 {
       pointer 'horses' += 1;
       print 'horseNum', 'horses';
-      if &'horses' == MAX
-        isWinner(int 'horseNum', int* 'horses');
-    else
+    } if else  &'horses' == MAX{
+      isWinner(int 'horseNum', int* 'horses');
+    } else {
       print 'horseNum', 'horses';
+    } // end if statement
 ---
 
 printlane function
@@ -58,10 +55,10 @@ isWinner function
   function isWinner(int 'horseNum', int* 'horses')  
     declare int* 'horseTemp' = &'horses';
 
-    if &'horses' is eaual to MAX;
+    if &'horses' is eaual to MAX {
       print 'horseNum' is the winner!!;
-    else
-      print 'horseNum' and 'horses';
-    
+    } else {
+      retunr boolean false (keepGoing);
+    } // end if
 ---
 
