@@ -1,5 +1,5 @@
 # CS121_Project_4
-
+"
 ---
 include iostream
 include random numbers
@@ -12,7 +12,7 @@ call function 'isWinner' ('horses', pointer 'horses')
 MAX is max length of array
 
 main integer function
- // : 
+ 
   declare array 'horses' of integers 0 - 4; 
   // names: (Lenard, Klein, Alger, Audrey, Derrick, Emyln)
   declare boolean keepGoing true
@@ -62,3 +62,4 @@ bool isWinner(integer 'horseNum', pointer integer 'horses')
     return false or 0?
     
 ---
+"
