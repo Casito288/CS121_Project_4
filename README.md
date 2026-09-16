@@ -5,61 +5,61 @@
   include random numbers
 
   //                      (which horse it is, the horses array)  \
-  call function 'advance' ('horses', pointer 'horses')  \
-  call function 'printLane' ('horses', pointer 'horses')  \
-  call function 'isWinner' ('horses', pointer 'horses')  
+  call function 'advance' (int 'horseNum', int* 'horses');  \
+  call function 'printLane' (int 'horseNum', int* 'horses');  \
+  call function 'isWinner' (int 'horseNum', int* 'horses');  
 
-  MAX is max length of array
+  MAX is max length of array;
 
-  main integer function
+  main function
  
-    declare array 'horses' of integers 0 - 4; 
-    // names: (Lenard, Klein, Alger, Audrey, Derrick, Emyln)
-    declare boolean keepGoing true
+    //Indicies for each horse
+    declare array 'horseNum' of integers 0 - 4; // names: (Lenard, Klein, Alger, Audrey, Derrick, Emyln)
+    declare int* 'horses' = &'horseNum';
+    declare boolean keepGoing true;
   
     while keepGoing is true
-      prompt the user to press enter to flip the coin
+      prompt the user to press enter to flip the coin;
     
-    
+      advance('horseNum', *'horses');
+      
+      
       if value of 'printLane' == 'MAX' array length
-        call function 'isWinner' ( value of 'horses', pointer 'horses')
+        call function 'isWinner' ('horses', * 'horses');
       else 
-        print "NO WINNER"  
+        print "NO WINNER";  
 ---
 
 Advance function
 ---
-  void advance(integer 'horseNum', pointer integer 'horses')  \
-    declare variable 'coin' as random number 0 - 1  \
-    declare integer 'horseTempNum'  
+  function advance('horseNum', int* 'horses')  \
+    declare variable 'coin' as random number 0 - 1;  \  
 
     if coin = 1
-      pointer 'horses += 1
-      'horseTempNum' = value at 'horses'
-      print 'horseNum' and 'horseTempNum'
+      pointer 'horses' += 1;
+      print 'horseNum', 'horses';
     else
-      print 'horseNum' and 'horses'
+      print 'horseNum', 'horses';
 ---
 
 printlane function
 ---
-  void printLane(integer 'horseNum', pointer integer 'horses')  \
-    declare array 'lane' with 1 row and 15 columns  
-  
-    print array lane ['horseNum'] and ['horses']
+  function printLane('horseNum', * 'horses')  \
+    declare array 'lane' [5][15] of "-"
+    declare int* 'horseTemp' = &'horses';
+    
+    print array 'lane' ['horseNum'] and ['horseTemp'];
 ---
 
 isWinner function
 ---
-  bool isWinner(integer 'horseNum', pointer integer 'horses')  \
-    declare array 'lane' with 1 row and 15 columns  
+  function isWinner('horseNum', * 'horses')  \  
+    declare int* 'horseTemp' = &'horses';
 
-    if valueof('horses') is eaual to max length of 'lane'
-      print 'horseNum' is the winner!!
-      return true;
-  
+    if valueof('horseTemp') is eaual to max length of 'lane'
+      print 'horseNum' is the winner!!;
     else
-      return false or 0?
+      print 'horseNum' and 'horses';
     
 ---
 
