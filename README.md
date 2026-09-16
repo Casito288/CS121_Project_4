@@ -4,10 +4,10 @@
   include iostream
   include random numbers
 
-  //                      (which horse it is, the horses array)
-  call function 'advance' ('horses', pointer 'horses')
-  call function 'printLane' ('horses', pointer 'horses')
-  call function 'isWinner' ('horses', pointer 'horses')
+  //                      (which horse it is, the horses array)  \
+  call function 'advance' ('horses', pointer 'horses')  \
+  call function 'printLane' ('horses', pointer 'horses')  \
+  call function 'isWinner' ('horses', pointer 'horses')  \
 
   MAX is max length of array
 
@@ -29,9 +29,9 @@
 
 Advance function
 ---
-  void advance(integer 'horseNum', pointer integer 'horses')  
-    declare variable 'coin' as random number 0 - 1  
-    declare integer 'horseTempNum'  
+  void advance(integer 'horseNum', pointer integer 'horses')  \
+    declare variable 'coin' as random number 0 - 1  \
+    declare integer 'horseTempNum'  \
 
     if coin = 1
       pointer 'horses += 1
@@ -43,16 +43,16 @@ Advance function
 
 printlane function
 ---
-  void printLane(integer 'horseNum', pointer integer 'horses')  
-    declare array 'lane' with 1 row and 15 columns  
+  void printLane(integer 'horseNum', pointer integer 'horses')  \
+    declare array 'lane' with 1 row and 15 columns  \
   
     print array lane ['horseNum'] and ['horses']
 ---
 
 isWinner function
 ---
-  bool isWinner(integer 'horseNum', pointer integer 'horses')
-    declare array 'lane' with 1 row and 15 columns  
+  bool isWinner(integer 'horseNum', pointer integer 'horses')  \
+    declare array 'lane' with 1 row and 15 columns  \
 
     if valueof('horses') is eaual to max length of 'lane'
       print 'horseNum' is the winner!!
